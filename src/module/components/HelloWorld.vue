@@ -21,9 +21,9 @@ export default {
   },
   mounted() {},
   computed: {
-    ...mapGetters(["getUsername"]),
+    ...mapGetters(['getUsername']),
     username() {
-      return this.$store.state.username;
+      return this.$store.getters.getUsername;
     },
   },
   method: {
