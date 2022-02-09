@@ -1,0 +1,62 @@
+// mixins
+@function set-text-color($color) {
+    @if(lightness($color) > 70) {
+        @return $body-color;
+    }
+
+    @else {
+        @return $white;
+    }
+}
+
+
+//function to for font-size in REM
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    // font-size: $size;
+    font-size: calculateRem($size);
+}
+
+//function to manage text color on button
+@function set-button-text-color($color) {
+    @if (lightness($color) > 60) {
+        @return black;
+    }
+
+    @else {
+        @return white;
+    }
+}
+
+
+// mixin to manage button color background
+@mixin intilli-btn($color) {
+    @if (lightness($color) > 40) {
+        background: $color;
+        color: set-button-text-color($color);
+
+        @if(set-button-text-color($color)==black) {
+            border-color: $black;
+        }
+
+        @else {
+            border-color: $color;
+        }
+    }
+
+    @else {
+        background: $color;
+        color: set-button-text-color($color);
+        border-color: $color;
+    }
+}
+
+@mixin intilli-btn-outline($color){
+    background: $white;
+    border-color: $color;
+    color: $color;
+}

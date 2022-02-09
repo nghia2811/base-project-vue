@@ -1,0 +1,349 @@
+// checkbox regular
+.custom-checkbox {
+  margin-bottom: 10px;
+  .custom-control-input {
+    &:focus:not(:checked) {
+      ~ .custom-control-label {
+        &:before {
+          border-color: $checkbox-border;
+        }
+      }
+    }
+    ~ .custom-control-label {
+      &:before {
+        border-color: $checkbox-border;
+        background-color: $checkbox-background;
+      }
+    }
+    &:checked {
+      ~ .custom-control-label {
+        &:before {
+          border-color: $checkbox-checked-border;
+          background-color: $checkbox-checked-background;
+        }
+      }
+    }
+  }
+}
+
+// Product Checkbox
+.product-checkbox.custom-checkbox {
+  position: relative;
+  padding-left: 0;
+  margin: 10px;
+  width: 100%;
+  .custom-control-input {
+    border: unset;
+  }
+  label.custom-control-label {
+    position: relative;
+    border: unset;
+    background: $gray-light-box;
+    width: 100%;
+    min-height: 90px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+    user-select: none;
+    padding-left: 60px;
+  
+    @include media-breakpoint-up(xxl) {
+      padding-left: 70px;
+    }
+    i {
+      position: absolute;
+      width: 50px;
+      font-size: 20px;
+      color: $checkbox-text-color;
+      left: 0px;
+      top: 50%;
+      text-align: center;
+      transform: translateY(-50%);
+      @include media-breakpoint-up(md) {
+        left: 8px;
+        font-size: 20px;
+      }
+      @include media-breakpoint-up(xxl) {
+        left: 10px;
+        font-size: 20px;
+      }
+    }
+    h4 {
+      @include media-breakpoint-up(xxl) {
+        @include font-size(17px);
+      }
+      @include font-size(16px);
+      font-weight: 600;
+      color: $checkbox-text-color;
+      margin-bottom: 5px;
+      letter-spacing: 0.3px;
+    }
+    span {
+      @include font-size(13px);
+      color: $gray-dark;
+      @include media-breakpoint-down(sm) {
+        @include font-size(14px);
+      }
+    }
+    &::after {
+      content: none;
+    }
+    &::before {
+      position: absolute;
+      content: "\f00c";
+      font-family: FontAwesome;
+      right: 1px;
+      top: 1px;
+      left: inherit;
+      color: $gray-light;
+      background: $white;
+      width: 40px;
+      height: 40px;
+      border-radius: 0;
+      border-bottom-left-radius: 40px;
+      border-top-right-radius: 4px;
+      font-size: 16px;
+      padding-top: 5px;
+      padding-left: 15px;
+      border: unset;
+    }
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    background: $selection;
+    border: unset;
+    h4,
+    i,
+    span {
+      color: $checkbox-active-text-color;
+    }
+
+    &::before {
+      color: $selection;
+      background-color: $white;
+      border: unset;
+    }
+  }
+
+  .custom-control-input:focus:not(:checked) ~ .custom-control-label:before {
+    border: unset;
+  }
+
+  .custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+    color: $selection;
+    background-color: $white;
+    border: unset;
+  }
+}
+
+// Payment getway checkboxes
+.gateway-checkbox {
+  position: relative;
+  margin-bottom: 20px;
+  .custom-checkbox {
+    position: relative;
+    padding-left: 0;
+    margin-right: 13px;
+    margin-bottom: 0;
+    label.custom-control-label {
+      width: 140px;
+      height: 80px;
+      @include media-breakpoint-down(sm) {
+        width: 100px;
+        height: 60px;
+      }
+      padding: 5px 10px;
+      background: $gray-light-box;
+      border-radius: 4px;
+      box-shadow: unset;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: box-shadow ease-in-out 0.2s;
+      &::after {
+        content: none;
+      }
+      &::before {
+        position: absolute;
+        content: "\f00c";
+        font-family: FontAwesome;
+        right: 0;
+        top: 0;
+        left: inherit;
+        color: $white;
+        background: $primary;
+        width: 30px;
+        height: 30px;
+        border-radius: 0;
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 4px;
+        border-color: unset;
+        @include font-size(13px);
+        padding-top: 3px;
+        padding-left: 10px;
+        transform: scale(0);
+      }
+      img {
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+        @include media-breakpoint-down(sm) {
+          width: 40px;
+        }
+      }
+    }
+
+    .custom-control-input:checked ~ .custom-control-label {
+      background: $white;
+      box-shadow: 0 0 10px rgba($primary, 0.3);
+      border-color: unset;
+      &::before {
+        transform: scale(1);
+      }
+    }
+
+    + .custom-checkbox {
+      margin-top: 0;
+    }
+  }
+}
+
+//payment card option checkbox
+.card-checkbox-group {
+  .custom-checkbox {
+    position: relative;
+    padding-left: 0;
+    margin-right: 13px;
+    margin-bottom: 0;
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 10px;
+    }
+    label.custom-control-label {
+      width: 60px;
+      @include media-breakpoint-down(sm) {
+        width: 55px;
+      }
+      padding: 5px 10px;
+      border-radius: 8px;
+      box-shadow: unset;
+      cursor: pointer;
+      transition: box-shadow ease-in-out 0.2s;
+      &::after,
+      &::before {
+        content: none;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        filter: grayscale(1);
+      }
+    }
+
+    .custom-control-input:checked ~ .custom-control-label {
+      box-shadow: 0 0 10px rgba($primary, 0.3);
+      img {
+        filter: grayscale(0);
+      }
+    }
+
+    + .custom-checkbox {
+      margin-top: 0;
+    }
+  }
+}
+
+//weekday selection
+.weekdaySelection {
+  position: relative;
+  margin-bottom: 0;
+  .bv-no-focus-ring {
+    padding: 0;
+    .btn-group-toggle {
+      @include media-breakpoint-down(sm) {
+        width: calc(100% / 7);
+      }
+      > label {
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+        @include media-breakpoint-down(sm) {
+          width: 100%;
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        @media only screen and (max-width: 375px) {
+          padding-left: 0;
+          padding-right: 0;
+          width: 100%;
+        }
+
+        min-width: auto;
+        text-align: center;
+        margin: 0;
+        margin-right: 0;
+        cursor: pointer;
+        &.btn-primary {
+          background: $white;
+          color: $gray-light;
+          min-width: auto;
+          border-color: $gray-light;
+          border-right: unset;
+          position: relative;
+          top: unset;
+          border-radius: unset;
+          min-height: 44px;
+          line-height: 44px;
+          @include media-breakpoint-down(sm) {
+            min-height: 40px;
+            line-height: 40px;
+          }
+          padding-top: 0;
+          padding-bottom: 0;
+          &.active {
+            background: $selection;
+            color: $checkbox-active-text-color;
+            border-color: $gray-light;
+          }
+
+          &:not(:disabled):not(.disabled):active:focus,
+          &.focus,
+          &.active,
+          &:active {
+            box-shadow: unset;
+          }
+
+          &:not(:disabled):not(.disabled):active,
+          &:not(:disabled):not(.disabled).active {
+            background: $selection;
+            color: $checkbox-active-text-color;
+            border-color: $gray-light;
+            box-shadow: unset;
+          }
+        }
+      }
+      &:last-child {
+        label {
+          &.btn-primary {
+            border-right: 1px solid $gray-light;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+          }
+        }
+      }
+      &:first-child {
+        label {
+          &.btn-primary {
+            border-left: 1px solid $gray-light;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+}

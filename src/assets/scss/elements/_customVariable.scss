@@ -1,0 +1,146 @@
+//mapping value for all the color to variable
+// @function color($color) {    
+//     @return map-get($dynamic, $color);
+// }
+
+//custom theme color for branding
+$gray-200:  #d5d5d5;
+$gray-800:  #53565A;
+$gray-900:  #212529;
+$black:     #000000;
+$white:     #ffffff;
+
+$gray-lighter:#f5f5f5;
+$gray-light:#d5d5d5;
+$gray-dark:#979797;
+
+// primary accent color
+$primary: #0082ba;
+$primary-light : #EFF6F5;
+$primary-light-background:#E7F8FF;
+$dashboard-background-color:#f5f5f5;
+
+// Secondary option
+$secondary: $primary;
+
+// Checkboxes and Radio button
+$selection: $primary;
+
+// header background color
+$headerColor : $primary;
+
+//secondary header
+$secondary-header:#EBEBEB;
+
+//font color (check B2C)
+$secondary-font:#2C3E4A;
+$color-primary:#1A194B;
+$color-secondary:#2D3CFF;
+
+// default section box
+$default-selction-box:#f5f5f5;
+$gray-light-box:#f5f5f5;
+
+// text color
+$text-primary:$primary;
+$text-secondary:$primary;
+$text-third:$primary;
+$text-forth:$primary;
+$text-fifth:$primary;
+$text-label:$gray-dark;
+$text-value:$black;
+
+// tabs color
+$tab-background:$white;
+$tab-text-color:$primary;
+$tab-icon-color:$primary;
+$tab-active-background:$primary;
+$tab-active-text-color:$white;
+$tab-active-icon-color:$white;
+
+// line and vertical tabs color
+$line-tab-color:$black;
+$line-tab-active-color:$primary;
+$line-tab-seperator-color:#dfdfdf;
+
+// stepped tabs color
+$stepped-tab-background:$white;
+$stepped-tab-active-background:$primary;
+$stepped-tab-color:$primary;
+$stepped-tab-active-color:$white;
+$stepped-tab-seperator-color:#d5d5d5;
+$stepped-tab-active-seperator-color:$primary;
+
+//table color
+$table-primary-title:$black;
+$table-primary-link:$black;
+$table-secondary-content:$black;
+
+// form element
+//Input Boxes
+$input-lable:#d5d5d5;
+$input-lable-onboarding:$gray-dark;
+$input-background:$white;
+
+$input-floating-lable:#d5d5d5;
+$input-border-color:#d5d5d5;
+$input-text-color:$black;
+$input-icon:#d5d5d5;
+$input-active-floating-lable:$primary;
+$input-active-border-color:#979797;
+$input-active-icon:#d5d5d5;
+$input-action-color:$primary;
+
+//Check Boxes
+$checkbox-background:$white;
+$checkbox-checked-background:$primary;
+$checkbox-border:#d5d5d5;
+$checkbox-checked-border:$primary;
+$checkbox-text-color:$black;
+$checkbox-active-text-color:$white;
+
+//Radio Boxes
+$radio-background:#d5d5d5;
+$radio-border:$white;
+$radio-active-background:$primary;
+$radio-disabled-color:#d5d5d5;
+$radio-active-color:$primary;
+
+// Buttons color
+$button-primary-color:$white;
+$button-primary-background:$primary;
+$button-primary-broder-color:$primary;
+
+$button-primary-hover-background:$primary;
+$button-primary-hover-broder-color:$primary;
+
+$button-disabled-primary-color:#7b7b7b;
+$button-disabled-primary-background:#D5D5D5;
+$button-disabled-primary-broder-color:#D5D5D5;
+
+$button-outline-color:$primary;
+$button-outline-background:$white;
+$button-outline-broder-color:$primary;
+$button-outline-hover-color:$white;
+
+// Modal color
+$modal-header-background:#f5f5f5;
+$modal-header-text:$black;
+$modal-header-border-color:#D5D5D5;
+
+// filter color
+$filter-background-color:#f5f5f5;
+$filter-border-color:#d5d5d5;
+$filter-color:#979797;
+
+$breadcrumbs-background-color:$white;
+
+// badge color
+$color-badge:$primary;
+
+// pagination colors
+$pagination-background-color:$primary;
+$pagination-border-color:$gray-light;
+$pagination-active-background-color:#E7F8FF;
+$pagination-active-border-color:$primary;
+$pagination-active-text-color:$primary;

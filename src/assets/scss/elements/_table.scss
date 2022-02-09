@@ -1,0 +1,289 @@
+table{
+    thead{
+        tr{
+            th{ 
+                font-weight: 600;
+                color:$primary;    
+                background: $white; 
+                text-shadow: inherit; 
+                border-color: #F5F2F2 !important;
+                @include media-breakpoint-down(sm) {
+                    white-space: nowrap;
+                }     
+                i.fa{
+                    margin-left: 8px;
+                }    
+            }
+        }
+    }
+    tbody{
+        tr{
+            td{
+                color: $black;
+                border-color: #F5F2F2 !important;
+                padding: 0.3rem 0.5rem;
+            }
+        }
+    }
+}
+.task-wrapper{
+    tr{
+        &:first-child{
+            td{
+                border-top: none;
+            }
+        }
+        td{
+            padding: 1rem 0.75rem;
+        }
+    }
+}
+.accordion-departure__content{
+    table{
+        th{
+            border: none;
+            font-weight: normal;            
+        }
+    }
+    .b-table-details{
+        box-shadow: 1px 1px 1px 1px rgba($primary, 0.015);
+    }
+}
+
+.checkoutInventory__baggageTable{
+    table{
+        border-collapse: separate;
+    }
+    tbody{
+        tr{
+            border: solid 1px $border-color;
+            td{
+                padding: 0.6rem 0.5rem;
+            }
+        }
+    }
+}
+
+.default-table{
+  width: 100%;
+  tr{
+    td:first-child{
+      padding-left: 0px;
+    }
+  }
+}
+
+#accordion-bookActivity{
+    table{
+        tr{
+            td, th{
+                padding: 0.8rem 0.5rem;
+            }
+            td, th{
+                &:first-child{
+                    padding-left: 0px;
+                }
+            }
+        }
+    }
+}
+
+.customer-wrapper{
+    table{
+        tr{
+            th{
+                .itinerary__itemTable{
+                    thead{
+                        tr{
+                            th{
+                                padding: 0.6rem 0.5rem;                                
+                            }
+                        }
+                    }
+                    tbody{
+                        tr{
+                            border: solid 1px $border-color;
+                            td{
+                                padding: 0.6rem 0.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.normal-table{
+    td{
+        vertical-align: middle;
+    }
+}
+.itinerary__itemTable{
+    thead{
+        tr{
+            th{
+                padding: 0.6rem 0.5rem;                
+            }
+        }
+    }
+}
+.homebox__table{
+    min-height: 200px;
+    padding-left: 20px;
+    padding-right: 20px;   
+}
+
+.table{
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    margin-top: 10px;
+    thead{
+        tr{
+            th{
+                padding: 10px;
+                color: $table-primary-title;
+                @include font-size(14px);
+                white-space: nowrap;
+                font-weight: 500;
+                border-top: 0;
+                border-bottom: 0;
+                a{
+                    color: $table-primary-link;
+                }
+                button{
+                    color: $table-primary-link;
+                }
+            }
+        }
+    }
+    tbody{
+        tr{
+            td{
+               padding: 10px;
+               color: $table-secondary-content;
+               @include font-size(14px);
+               border-top: $gray-200 solid 1px !important;
+               border-bottom: $gray-200 solid 1px !important;
+               &:first-child{
+                   border-left: $gray-200 solid 1px !important;
+                   border-top-left-radius: 4px;
+                   border-bottom-left-radius: 4px;
+               }
+               &:last-child{
+                   border-right: $gray-200 solid 1px !important;
+                   border-top-right-radius: 4px;
+                   border-bottom-right-radius: 4px;
+               }
+           }
+       }
+   }
+    
+    tr{
+        td{
+            .btn-link.action-toggle{                        
+                background: transparent;
+                color: $primary !important;
+                & + .dropdown-menu{
+                    overflow: hidden;
+                    &.show{
+                        border-radius: 5px;
+                        li{
+                            .dropdown-item{
+                                &:hover{
+                                    background-color:$primary-light-background;
+                                    color:$primary;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &:hover{
+            .btn-link.action-toggle{  
+                background: $white;                      
+                color: $primary !important;
+            }
+        }
+    }
+}
+.btn-link.action-toggle{                        
+    background: transparent;
+    color: $primary !important;
+    & + .dropdown-menu{
+        overflow: hidden;
+        &.show{
+            border-radius: 5px;
+            li{
+                text-align: left;
+                .dropdown-item{
+                    &:hover{
+                        background-color:$primary-light-background;
+                        color:$primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.newTable{
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    thead{
+        tr{
+            th{
+                color: $black;
+                @include font-size(14px);                
+                white-space: nowrap;
+                font-weight: 500;
+            }
+        }
+    }
+    tbody{
+         tr{
+             td{
+                padding: 10px;
+                color: $black;
+                @include font-size(14px);
+                border-top: $gray-light solid 1px !important;
+                border-bottom: $gray-light solid 1px !important;
+                &:first-child{
+                    border-left: $gray-light solid 1px !important;
+                    border-top-left-radius: 4px;
+                    border-bottom-left-radius: 4px;
+                }
+                &:last-child{
+                    border-right: $gray-light solid 1px !important;
+                    border-top-right-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                }
+            }
+        }
+    }
+}
+
+// Invoice Table
+.invoice-table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .invoice-table th,
+  .invoice-table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid $gray-light;
+  }
+  
+  .invoice-table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid $gray-light;
+  }
+  
+  .invoice-table tbody + tbody {
+    border-top: 2px solid $gray-light;
+  }
+  

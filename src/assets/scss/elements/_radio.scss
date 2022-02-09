@@ -1,0 +1,119 @@
+//Radio Button
+.custom-radio {
+    padding-left: 0;
+    .custom-control-label {
+      padding-left: 32px;
+      position: relative;
+  
+      &::after {
+        top: 50%;
+        left: 2px;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        background-image: none;
+        background: $radio-background;
+        border-radius: 50%;
+        border: 3px solid $radio-border;
+        transform: translateY(-50%);
+      }
+      &::before {
+        top: 50%;
+        left: 0;
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: $radio-background;
+        border: unset;
+        transform: translateY(-50%);
+      }
+  
+      &:focus{
+        &::before{
+          box-shadow: unset;
+        }      
+      }
+    }
+  
+    .custom-control-input:checked ~ .custom-control-label::before {
+      border-width: unset;
+      border-color: unset;
+      background-color: $radio-active-background;
+    }
+  
+    .custom-control-input:checked ~ .custom-control-label::after {
+      background: $radio-active-background;
+    }
+}
+  
+// Toggle Switch
+  .custom-switch {
+    display: inline-block;
+    padding-left: 2.8rem;
+    label.custom-control-label {
+      cursor: pointer;
+      font-weight: 400;
+      text-transform: capitalize;
+      @include font-size(14px);
+      color: $radio-active-color;
+      letter-spacing: 0.5px;
+      user-select: none;
+      line-height: 1;
+      white-space: nowrap;
+      font-weight: 500;
+      &::before {
+        left: -3rem;
+        width: 36px;
+        height: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        outline: none;
+        background: $radio-background;
+        box-shadow: unset;
+        box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px;
+      }
+      &::after {
+        left: calc(-3rem);
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        transform: translate(-3px, -50%);
+        background: $white;
+        box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px;
+      }
+    }
+    .custom-control-input {
+      &:checked {
+        & ~ .custom-control-label {
+          &::after {
+            transform: translate(1.3rem, -50%);
+            background: $white;
+          }
+  
+          &::before {
+            background: $radio-active-background;
+          }
+        }
+      }
+      &:focus,
+      &:active,
+      &:hover {
+        & ~ .custom-control-label {
+          &::before {
+            box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px;
+          }
+        }
+      }
+      &:disabled~.custom-control-label:before{
+        background-color: $radio-disabled-color;
+      }
+    } 
+    + span {
+        display: inline-block;
+        margin-left: 10px;
+        i {
+          @include font-size(18px);
+          color: $radio-active-color;
+        }
+    }
+  }

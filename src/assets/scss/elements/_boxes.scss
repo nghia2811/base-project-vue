@@ -1,0 +1,283 @@
+//Labeled boxes
+.labeled-box {
+  position: relative;
+  display: block;
+  padding: 20px 15px;
+  @include media-breakpoint-down(sm) {
+  }
+  background: $white;
+  border: 2px solid #d5d5d5;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  .lable-floating {
+    position: absolute;
+    top: -10px;
+    background: $white;
+    padding: 0 10px;
+    font-weight: 500;
+    color: $primary;
+    &.label-small {
+      @include font-size(14px);
+      top: calc(0% - 9px);
+    }
+    &.label-medium {
+      @include font-size(16px);
+      top: calc(0% - 10px);
+      @include media-breakpoint-down(sm) {
+        @include font-size(14px);
+      }
+    }
+    &.label-large {
+      @include font-size(18px);
+      top: calc(0% - 12px);
+    }
+  }
+}
+
+// simple box styling
+.box{
+    position: relative;
+    display: block;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    width: 100%;
+    background: $white;
+
+    //color variation
+    &-default{border-color:$gray-200;}
+    &-primary{border-color: $primary;}
+    &-secondary{border-color: $secondary;}
+    &-success{border-color: $success;}
+    &-danger{border-color: $danger;}
+
+    .box-heading{
+        position: relative;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include media-breakpoint-down(sm){
+            padding: 15px 0;
+        }
+        h4,h3,h2, a{
+            position: relative;
+            font-size: 16px;
+            color: $black;
+            margin: 0;
+            text-decoration: none;
+            color: $black;
+        }
+
+        .heading-action{
+            position: relative;
+            a{
+                font-size: 14px;
+                color: $primary;
+                @include media-breakpoint-down(sm){
+                    font-size: 13px;
+                }
+                i{
+                    font-size: 16px;
+                    margin-right: 8px;
+                    @include media-breakpoint-down(sm){
+                        font-size: 14px;
+                        margin-right: 4px;
+                    }
+                }
+            }
+        }
+    }
+
+    .box-body{
+        position: relative;
+        padding: 15px;
+        @include media-breakpoint-down(sm){
+            padding: 15px 0;
+        }
+        .form-block{
+            position: relative;
+            flex-wrap: nowrap;
+            @include media-breakpoint-down(lg){
+                flex-wrap: wrap;
+            }
+            + .form-block{
+                margin-top: 15px;
+                @include media-breakpoint-down(sm){
+                    margin-top: 0;
+                }
+            }
+
+            .form-box{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                // align-items: center;
+                flex-grow: 1;
+                margin-bottom: 15px;
+                padding-top: 0;                
+                @media screen and (min-width:1024px) and (max-width:1600px){
+                    padding-top: 20px;
+                }
+                @include media-breakpoint-down(sm){
+                    margin-bottom: 0;
+                }
+                > label{
+                    position: relative;
+                    min-width: 80px;
+                    flex-grow: 0;
+                    margin-bottom: 0;
+                    text-align: left;
+                    margin-right: 10px;
+                    @media screen and (min-width:1024px) and (max-width:1600px){
+                        position: absolute;
+                        text-align: left;
+                        margin-right: 0;                        
+                        top: -5px;
+                    }
+                }
+                .form-control{                    
+                    width: auto;
+                    @media screen and (min-width:1024px) and (max-width:1600px){
+                        width: 100%;
+                    }
+                }
+                .form-control, .custom-select{
+                    flex-grow: 1;
+                    min-width: 110px;
+                    padding: 0.8rem;
+                    min-height: 40px;
+                    height: calc(1.3em + 1.35rem + 5px);
+                    @media screen and (min-width:1024px) and (max-width:1600px){
+                        min-width: auto;
+                    }
+                    &.sm-input{
+                        min-width: 100px;
+                        max-width: 100px;
+                    }
+                    &:focus, &:active{
+                        box-shadow: unset;
+                        border-color: $input-active-border-color;
+                    }
+                }
+
+                .vdp-datepicker{
+                    min-width: auto;
+                    flex-grow: 1;
+                }                
+            }
+
+            &.special_block{
+                .form-box{
+                    .form-control{
+                        &.has-margin{
+                            position: relative;
+                            margin-right: 100px;                            
+                        }
+                    }  
+                    i{
+                        position: absolute;
+                        color: $gray-200;
+                        font-style: normal;
+                        right: 40px;
+                    }                  
+                }
+            }
+        }  
+        
+        .simple_allocation{
+            border: $gray-200 solid 1px;
+            position: relative;
+            padding: 15px;
+            border-radius: 4px;
+            background: lighten($color: $black, $amount: 98);
+            .removeRateBox{
+                position: absolute;
+                right: 0;
+                top: 0;
+                .btn-remove{
+                    border: 0;
+                    min-width: 40px;
+                    min-height: 45px;
+                    border-radius: 0 4px 0 4px;
+                }
+            }
+        }   
+        
+        .dotw-rate-row{            
+            position: relative;
+            @include media-breakpoint-up(xl) {
+                padding-right: 50px;
+            }
+            @include media-breakpoint-down(sm) {
+                margin-top: 10px;
+            }
+            .row-delete{
+                position: absolute;
+                right: 0;
+                min-width: 50px;
+                line-height: 45px;
+                top:-6px;
+                @include media-breakpoint-up(xl) {
+                    top:0;
+                }
+                .btn{
+                    min-width: 50px;
+                }
+
+            }
+        }
+    }
+
+    .box-footer{
+        position: relative;
+        .action{
+            position: relative;
+            margin-top: 30px;
+            @include media-breakpoint-down(sm){
+                margin-top: 0;
+            }
+            .action-menu{
+                position: relative;
+                a{
+                    position: relative;
+                    display: inline-block;
+                    width: 100px;
+                    height: 45px;
+                    font-size: 14px;
+                    line-height: 45px;
+                    color: $primary;
+                    text-align: center;
+                    font-weight: 500;
+                    text-decoration: none;
+                    border-top: 1px solid $gray-200;
+                    border-right: 1px solid $gray-200;
+                    transition: all ease-in-out 0.3s;
+                    &:last-child{
+                        border-top-right-radius: 4px;
+                    }
+                    i{
+                        vertical-align: middle;
+                        font-size: 16px;
+                        margin-right: 8px;
+                    }
+                    span{
+                        vertical-align: middle;
+                    }
+
+                    &:hover{
+                        background: $primary;
+                        color: $white;
+                        border-color: $primary;
+                    }
+                }
+            }
+            .action-link{
+                margin-right: 15px;
+                a{
+                    font-size: 14px;
+                    color: $primary;
+                }
+            }
+        }
+    }
+}

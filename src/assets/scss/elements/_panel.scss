@@ -1,0 +1,155 @@
+// universal collapsibe Panel
+.panel {
+  position: relative;
+  background: $white;
+  border: 1px solid $gray-light;
+  box-shadow: unset;
+  border-radius: 4px;
+  overflow: hidden;
+  .panel-heading {
+    position: relative;
+    display: flex;
+    padding-left: 15px;
+    padding-right: 15px;
+    @include media-breakpoint-up(md) {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    min-height: 56px;
+    background: $white;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    border-bottom: transparent;
+    .heading-text{
+        flex:1;
+        margin-bottom: 0;
+    }
+    i.checkbox-type{
+        position: relative;
+        display: inline-block;
+        margin-right: 20px;
+        flex: 0;
+        &::before {
+            position: absolute;
+            content: '';
+            width: 16px;
+            height: 16px;
+            background: $white;
+            border: 2px solid $checkbox-border;
+            border-radius: 50%;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            transition: all ease-in-out 0.3s;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: $checkbox-border;
+            border-radius: 50%;
+            top: 50%;
+            left: 4px;
+            transform: translateY(-50%);
+            transition: all ease-in-out 0.3s;
+        }
+    }
+
+    &::before {
+      font-family: FontAwesome;
+      position: absolute;
+      content: "\F078";
+      font-size: 14px;
+      display: inline-block;
+      color: $primary;
+      right: 15px;
+      top: auto;
+      bottom: auto;
+      -webkit-transition: all ease-in-out 0.2s;
+      transition: all ease-in-out 0.2s;
+    }
+
+    &[aria-expanded="true"] {
+      background: transparent;
+      border-bottom: 1px solid $gray-light;
+      i.checkbox-type{
+        &::before {
+            border-color: $primary;
+        }
+
+        &::after {
+            background-color: $primary;
+        }
+      }
+      &::before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .panel-body {
+    padding: 15px 15px;
+    @include media-breakpoint-up(md) {
+      padding: 15px 25px;
+    }
+    .panel{
+        .panel-body{
+          @include media-breakpoint-down(lg) {
+            padding: 15px 10px;
+          }
+        }
+      }
+  }
+
+  + .panel {
+    margin-top: 15px;
+  }
+
+  &.panel-default {
+    .panel-heading {
+      background: rgba($color: $gray-light, $alpha: 0.2);
+      h4 {
+        color: $secondary-font;
+      }
+    }
+  }
+  &.panel-primary {
+    .panel-heading {
+      background: rgba($color: $primary, $alpha: 0.2);
+    }
+  }
+}
+
+// sportsnet edit form panel with delete
+.edit-component-form{
+  position: relative;
+  .panel-row{
+    position:relative;
+    margin-bottom:20px;
+    .panel.with-delete{
+      margin-right: 60px;
+      .panel-heading{
+        h6{
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .remove-link{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      line-height: 60px;
+      i{
+        @include font-size(18px);
+        color: $primary;
+      }
+    }
+  }
+}

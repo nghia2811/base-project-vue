@@ -1,0 +1,256 @@
+//Login New design
+.login_page{
+    font-family: 'Roboto',sans-serif;
+    padding-left: 0 !important;
+    @media only screen and (min-width: 320px) and (max-width: 600px) {
+        .row{
+            margin: 0;
+        }
+        .col{padding-right: 0; padding-left: 0;}
+    }
+    .login-block {
+        display: flex;
+        flex-direction: row;     
+        @media screen and (max-width:990px){
+          height: auto;
+          min-height: unset;
+          background: $white;
+          border-radius: 10px;
+        }
+  
+        @media screen and (min-width: 320px) and (max-width: 768px){
+          border-radius: 10px;
+        }
+        .close {
+          position: absolute;
+          right: 5px;
+          top: 5px;
+          color: #8b8b8b;
+          font-weight: 300;
+          z-index: 3;
+          transition: all 0.3s ease-in-out;
+          @include font-size(36px);
+          @include media-breakpoint-up(md) {
+            @include font-size(24px);
+          }
+          &:focus{outline: none;}
+        } 
+        .logo-top{
+            width: 200px;
+            height: auto;
+            margin-bottom: 80px;
+            @media (min-width: 320px) and (max-width: 600px) {
+                margin-bottom: 40px;
+                margin-top: 20px;
+            }
+        }
+        .login_form_block{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: $white;
+            width: 100%;
+            border-radius: 5px;
+            padding: 30px;
+            margin-left: auto;
+            justify-content: center;
+            align-items: center;
+            @media (min-width: 768px) and (max-width: 1024px) {
+                width: 600px;
+                height: auto;
+                border-radius: 5px;
+                margin: auto;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            }
+            @media (min-width: 320px) and (max-width: 767px) {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+                padding: 15px;
+                margin: auto;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            }
+            .login-form{
+                width:100%;                    
+                border-bottom: 1px solid #F3F3F3;
+                @media (min-width: 320px) and (max-width: 600px) {
+                    width: 100%;
+                }
+               
+                h5{
+                    font-family: 'Roboto',sans-serif;
+                    @include font-size(30px);
+                    font-weight: 600;
+                    color:$black;
+                    margin-bottom: 20px;
+                    @media (min-width: 414px) and (max-width: 767px){
+                        @include font-size(26px);
+                      margin-bottom: 20px;
+                    }
+  
+                    @media (min-width:320px) and (max-width:413px){
+                      @include font-size(20px);
+                      margin-bottom: 30px;
+                    }
+                }      
+                .custom-control-group{
+                    .form-group{
+                        margin-bottom:0px;                        
+                    }
+                    + .custom-control-group{
+                      margin-bottom: 0;
+                        .form-group{
+                            margin-bottom:0px;                        
+                        }
+                    }
+                }
+                
+
+                .forgot-link{
+                    @include font-size(14px);
+                    color:$primary;
+                    font-weight: 400;
+                    @media (min-width:320px) and (max-width:413px){
+                        @include font-size(12px);
+                    }
+                }
+  
+                .btn-primary, .btn-outline-primary{
+                    padding: 12px 40px;
+                    @include font-size(16px);
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    font-weight: 500;
+                    &:focus{outline: none;box-shadow: unset;}
+                    @media screen and (max-width:375px){
+                      padding: 12px 30px;
+                    }
+                    @media screen and (max-width:320px){
+                      padding: 12px 20px;                    
+                    }
+                }
+  
+                .login-form__forgotBox .btn{                      
+                  margin: 0 auto 30px;
+                  @media screen and (max-width:600px){
+                    margin-bottom: 20px;
+                  }
+                }
+            }
+        }
+  
+        .brand-logo{
+            position: relative;
+            margin-top:20px;
+            span{
+                margin-right: 5px;
+                vertical-align: middle;
+            }
+            img{
+                width: 100px;
+                height: auto;
+            }
+        }
+    }                  
+  } 
+  
+  #login-modal___BV_modal_outer_ .modal-backdrop{
+    background: none;
+    background-color: $primary;
+    opacity: 0.7;
+  }
+  
+  .user-icon::before,
+  .password-icon::before,
+  .email-icon::before{
+    position: absolute;
+    font-family: 'icomoon';
+    content: "\e901";
+    color: #D5D5D5;
+    top: 50%;
+    left: 10px;
+    z-index: 4;
+    transform: translateY(-50%);
+  }
+  
+  .password-icon::before{content:'\e900'}
+  .email-icon::before{content:'\e902'} 
+
+
+  //account-setup
+  .account-setup{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 50px);
+    width: 100%;
+    .account_form_block{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background: $white;        
+        min-width: 900px;
+        max-width: 900px;        
+        border-radius: 5px;
+        padding: 30px;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #d5d5d5;
+        height: auto;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        @media (min-width: 768px) and (max-width: 1024px) {
+            
+            height: auto;
+            min-width: 100%;
+            max-width: 100%;
+            border-radius: 5px;
+            margin: auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        }
+        @media (min-width: 320px) and (max-width: 767px) {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            padding: 15px;
+            margin: auto;
+            min-width: 100%;
+            max-width: 100%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        }
+        .account-setup-form{
+            width:100%;                                
+            @media (min-width: 320px) and (max-width: 600px) {
+                width: 100%;
+            }
+            @media (min-width: 376px) and (max-width: 991px) {
+                //padding: 1rem;
+            }
+            h5{
+                font-family: 'Roboto',sans-serif;
+                @include font-size(30px);
+                font-weight: 600;
+                color:$black;
+                margin-bottom: 50px;
+                @media (min-width: 414px) and (max-width: 767px){
+                @include font-size(26px);
+                margin-bottom: 40px;
+                }
+
+                @media (min-width:320px) and (max-width:413px){
+                @include font-size(20px);
+                margin-bottom: 30px;
+                }
+            }            
+
+            .forgot-link{
+                @include font-size(14px);
+                color:$primary;
+                font-weight: 400;
+                @media (min-width:320px) and (max-width:413px){
+                    @include font-size(13px);
+                }
+            }
+        }
+    }
+  }
