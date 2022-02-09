@@ -4,7 +4,7 @@ export default {
   getData () {
     return api.get('/data')
   },
-  saveData (data) {
-    return api.post('link', data)
+  saveData (payload) {
+    return api.post('/link', payload)
   }
 }

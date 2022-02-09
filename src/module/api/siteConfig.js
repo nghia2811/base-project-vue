@@ -1,7 +1,7 @@
 import axios from 'axios'
 import router from '@/router'
 import LS from '@/module/Services/ls.js'
-import Authanticated from '@/module/Services/auth.js'
+import Authenticated from '@/module/Services/auth.js'
 
 // import NProgress from 'nprogress'
 // var NProgress = require("nprogress")
@@ -39,7 +39,7 @@ instance.interceptors.response.use(
   },
   function (error) {
     if (error.response.data.statusCode === 401) {
-      Authanticated.clearLocalStorage()
+      Authenticated.clearLocalStorage()
       window.location.href === window.location.origin + '/' ? window.location.href = '/' : router.push('/')
     }
     // Do something with response error

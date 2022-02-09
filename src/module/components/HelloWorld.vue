@@ -1,16 +1,18 @@
+
 <template>
   <div class="hello">
-    <h1 @click="haha">{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <button @click="changeUsername">Change Username</button>
+    <button @click="callApi">Call Api</button>
     <h2>{{ username }}</h2>
   </div>
 </template>
 
 <script>
-/* eslint-disable */
 import ApiRequest from "@/module/api/apiService.js";
 import { mapGetters } from "vuex";
+import _ from 'lodash';
 
 export default {
   name: "HelloWorld",
@@ -26,15 +28,22 @@ export default {
       return this.$store.getters.getUsername;
     },
   },
-  method: {
-    haha(){
-      alert('haha')
-    },
+  methods: {
+    /* eslint-disable no-unused-vars */
     changeUsername() {
-      console.log("click");
-      debugger;
       this.$store.dispatch("handleChangeUsername", "new Name");
     },
+    callApi(){
+      ApiRequest.getData().then(function (res) {
+            let response = res.data.data;
+            if (response) {
+            _.each(response, (val) => {
+
+            });
+            }
+        })
+        .catch(function (error) {});
+    }
   },
 };
 </script>
