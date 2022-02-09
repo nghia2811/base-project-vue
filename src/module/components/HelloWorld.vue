@@ -5,8 +5,10 @@
     <h2>Essential Links</h2>
     <button @click="changeUsername">Change Username</button>
     <button @click="callApi">Call Api</button>
+    <button @click="eventBus">eventBus</button>
     <h2>{{ username }}</h2>
     <h2>{{ $filters.formatMoney(accountBalance) }}</h2>
+    <h2>{{ $filters.formatMoney(accountBalance2) }}</h2>
   </div>
 </template>
 
@@ -21,11 +23,17 @@ export default {
   data() {
     return {
       msg: "Welcome to Your Vue.js App",
-      accountBalance: 100000
+      accountBalance: 100000,
+      accountBalance2: 200000
+
     };
   },
   mixins: [mixin],
-  mounted() {},
+  mounted() {
+    this.emitter.on("toggle-sidebar", value => {
+      this.accountBalance2 = value;
+    });
+  },
   computed: {
     ...mapGetters(['getUsername']),
     username() {
@@ -47,6 +55,9 @@ export default {
             }
         })
         .catch(function (error) {});
+    }, 
+    eventBus(){
+      this.emitter.emit("toggle-sidebar", this.accountBalance);
     }
   },
 };

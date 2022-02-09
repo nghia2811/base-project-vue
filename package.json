@@ -9,8 +9,11 @@
   },
   "dependencies": {
     "axios": "^0.25.0",
+    "click-outside-vue3": "^4.0.1",
     "core-js": "^3.6.5",
     "lodash": "^4.17.21",
+    "mitt": "^3.0.0",
+    "vee-validate": "^4.5.8",
     "vue": "^3.0.0",
     "vue-axios": "^3.4.1",
     "vue-router": "^4.0.12",
