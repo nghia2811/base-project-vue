@@ -6,6 +6,7 @@
     <button @click="changeUsername">Change Username</button>
     <button @click="callApi">Call Api</button>
     <h2>{{ username }}</h2>
+    <h2>{{ $filters.formatMoney(accountBalance) }}</h2>
   </div>
 </template>
 
@@ -13,14 +14,17 @@
 import ApiRequest from "@/module/api/apiService.js";
 import { mapGetters } from "vuex";
 import _ from 'lodash';
+import mixin from "../../mixins/mixin.js"
 
 export default {
   name: "HelloWorld",
   data() {
     return {
       msg: "Welcome to Your Vue.js App",
+      accountBalance: 100000
     };
   },
+  mixins: [mixin],
   mounted() {},
   computed: {
     ...mapGetters(['getUsername']),
